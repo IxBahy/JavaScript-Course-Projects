@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { Button } from './components/Button';
+import './css/app.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className='h-screen bg-slate-800 flex justify-center items-center'>
+        <div className='flex justify-center flex-wrap w-1/3 text-center'>
+          <Button text={'Guess the Number'} path={'/guessTheNumber'} />
+          <Button text={'Modal Window'} path={'/modalWindow'} />
+          <Button text={'Dice Game'} path={'/DiceGame'} />
+        </div>
+      </div>
+    </>
   );
 }
 
