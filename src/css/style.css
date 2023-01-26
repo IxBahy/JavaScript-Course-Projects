@@ -239,15 +239,15 @@ h1 {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-.DiceGame-player--active .name {
+.DiceGame-player--active .DiceGame-name {
     font-weight: 700;
 }
 
-.DiceGame-player--active .score {
+.DiceGame-player--active .DiceGame-score {
     font-weight: 400;
 }
 
-.DiceGame-player--active .current {
+.DiceGame-player--active .DiceGame-current {
     opacity: 1;
 }
 
@@ -356,7 +356,7 @@ h1 {
     background-color: #2f2f2f;
 }
 
-.DiceGame-player--winner .name {
+.DiceGame-player--winner .DiceGame-name {
     font-weight: 700;
     color: #c7365f;
 }
