@@ -53,7 +53,9 @@ export const DiceGame = () => {
         resetCurrentScore()
         switchActivePlayer()
         setIsFirstPlayerActive(!isFirstPlayerActive)
-        setDice(0)
+        setTimeout(() => {
+            setDice(0)
+        }, 200);
 
     }
 
@@ -91,10 +93,10 @@ export const DiceGame = () => {
     }
 
     const didPlayerWin = () => {
-        if (firstPlayerFinalScore >= 20) {
+        if (firstPlayerFinalScore >= 100) {
             firstPlayer.current.classList.add('DiceGame-player--winner')
             freezGame()
-        } else if (secondPlayerFinalScore >= 20) {
+        } else if (secondPlayerFinalScore >= 100) {
             secondPlayer.current.classList.add('DiceGame-player--winner')
             freezGame()
         }
@@ -143,7 +145,7 @@ export const DiceGame = () => {
                         <p className="DiceGame-current-score" id="current--1">{secondPlayerCurrentScore}</p>
                     </div>
                 </section>
-                <img src={diceImages[`${dice}`]} alt="Playing dice" className="DiceGame-dice hidden" ref={diceImage} />
+                <img src={dice !== 0 ? diceImages[`${dice}`] : ''} alt="Playing dice" className="DiceGame-dice hidden" ref={diceImage} />
                 <button className="DiceGame-btn DiceGame-btn--new" onClick={resetGame} >🔄 New game</button>
                 <button className="DiceGame-btn DiceGame-btn--roll" ref={btnDiceRoll} onClick={onDiceRoll} >🎲 Roll dice</button>
                 <button className="DiceGame-btn DiceGame-btn--hold" ref={btnCurrentScoreHold} onClick={onCurrentScoreHold}>📥 Hold</button>
